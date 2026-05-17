@@ -52,7 +52,7 @@ public class InstructorController {
                                 @RequestParam(required = false) Double allowance,
                                 @RequestParam(required = false) Double hourlyRate,
                                 @RequestParam(required = false) Double hoursTaught, Model model) {
-        // Validations
+        //Validations
         if (name.trim().isEmpty() || email.trim().isEmpty() || department.trim().isEmpty() || specialization.trim().isEmpty()) {
             model.addAttribute("error", "All text fields are required!");
             return "instructors/add";
