@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RegistrationService {
@@ -18,6 +19,15 @@ public class RegistrationService {
     private FileService fileService;
 
     public void addRegistration(Registration registration) throws IOException {
+        // Validation: duplicate enrollment prevention
+        List<Registration> existing = getAllRegistrations();
+        for (Registration r : existing) {
+            if (r.getStudentId().equals(registration.getStudentId()) && 
+                r.getCourseId().equals(registration.getCourseId()) &&
+                !r.getStatus().equals("DROPPED")) {
+                throw new IllegalArgumentException("Student is already enrolled in this course!");
+            }
+        }
         fileService.appendToFile(FILE_NAME, registration.toString());
     }
 
@@ -40,6 +50,10 @@ public class RegistrationService {
         return registrations;
     }
 
+    public Optional<Registration> getRegistrationById(String id) throws IOException {
+        return getAllRegistrations().stream().filter(r -> r.getId().equals(id)).findFirst();
+    }
+
     public void updateRegistration(Registration updated) throws IOException {
         List<Registration> list = getAllRegistrations();
         List<String> updatedLines = new ArrayList<>();
@@ -47,6 +61,17 @@ public class RegistrationService {
             if (r.getId().equals(updated.getId())) {
                 updatedLines.add(updated.toString());
             } else {
+                updatedLines.add(r.toString());
+            }
+        }
+        fileService.writeToFile(FILE_NAME, updatedLines);
+    }
+
+    public void deleteRegistration(String id) throws IOException {
+        List<Registration> list = getAllRegistrations();
+        List<String> updatedLines = new ArrayList<>();
+        for (Registration r : list) {
+            if (!r.getId().equals(id)) {
                 updatedLines.add(r.toString());
             }
         }

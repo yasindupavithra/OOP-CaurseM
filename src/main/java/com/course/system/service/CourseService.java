@@ -20,6 +20,13 @@ public class CourseService {
     private FileService fileService;
 
     public void addCourse(Course course) throws IOException {
+        // Validation: No duplicates for course code
+        List<Course> existing = getAllCourses();
+        for (Course c : existing) {
+            if (c.getCourseCode().equalsIgnoreCase(course.getCourseCode())) {
+                throw new IllegalArgumentException("Course with this course code already exists!");
+            }
+        }
         fileService.appendToFile(FILE_NAME, course.toString());
     }
 
@@ -38,9 +45,9 @@ public class CourseService {
                 String type = parts[6];
 
                 if (type.equals("ONLINE")) {
-                    courses.add(new OnlineCourse(id, title, instructor, credits, code, open, parts[7], parts[8]));
+                    courses.add(new OnlineCourse(id, title, instructor, credits, code, open, parts[7], parts.length > 8 ? parts[8] : ""));
                 } else {
-                    courses.add(new OnsiteCourse(id, title, instructor, credits, code, open, parts[7], parts[8]));
+                    courses.add(new OnsiteCourse(id, title, instructor, credits, code, open, parts[7], parts.length > 8 ? parts[8] : ""));
                 }
             }
         }

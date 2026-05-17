@@ -1,6 +1,8 @@
 package com.course.system.controller;
 
 import com.course.system.service.CourseService;
+import com.course.system.service.InstructorService;
+import com.course.system.service.PaymentService;
 import com.course.system.service.RegistrationService;
 import com.course.system.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +21,30 @@ public class MainController {
     private CourseService courseService;
     @Autowired
     private RegistrationService registrationService;
+    @Autowired
+    private InstructorService instructorService;
+    @Autowired
+    private PaymentService paymentService;
 
     @GetMapping("/")
     public String index(Model model) throws IOException {
-        // Advanced Statistics for Member 01 (The User)
         long totalStudents = userService.getAllUsers().stream()
                 .filter(u -> u.getUserType().equals("STUDENT")).count();
         long totalCourses = courseService.getAllCourses().size();
         long totalRegistrations = registrationService.getAllRegistrations().size();
-        double totalFees = registrationService.getAllRegistrations().stream()
-                .mapToDouble(r -> r.getRegistrationFee()).sum();
+        long totalInstructors = instructorService.getAllInstructors().size();
+        
+        // Sum total amount paid from payments file database
+        double totalRevenueCollected = paymentService.getAllPayments().stream()
+                .filter(p -> p.getStatus().equals("PAID"))
+                .mapToDouble(p -> p.getAmount())
+                .sum();
 
         model.addAttribute("totalStudents", totalStudents);
         model.addAttribute("totalCourses", totalCourses);
         model.addAttribute("totalRegistrations", totalRegistrations);
-        model.addAttribute("totalFees", totalFees);
+        model.addAttribute("totalInstructors", totalInstructors);
+        model.addAttribute("totalRevenueCollected", totalRevenueCollected);
 
         return "index";
     }
