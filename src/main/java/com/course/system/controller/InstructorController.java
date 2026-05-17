@@ -39,7 +39,7 @@ public class InstructorController {
         return "instructors/list";
     }
 
-    // 2. Create (Add Instructor UI)
+    // 2. Create (AddInstructor UI)
     @GetMapping("/add")
     public String showAddForm() {
         return "instructors/add";
