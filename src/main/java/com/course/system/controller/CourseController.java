@@ -21,7 +21,7 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    // 1. Read (Search / View List  User interfacce)
+    // 1. Read (Search / View List  User interface)
     @GetMapping
     public String listCourses(@RequestParam(required = false) String search, Model model) throws IOException {
         List<Course> courses = courseService.getAllCourses();
