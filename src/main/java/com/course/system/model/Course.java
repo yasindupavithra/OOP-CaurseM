@@ -1,5 +1,5 @@
 package com.course.system.model;
-
+//abstract used here
 public abstract class Course {
     private String id;
     private String title;
@@ -18,7 +18,7 @@ public abstract class Course {
         this.courseCode = courseCode;
         this.openForRegistration = openForRegistration;
     }
-
+//getters and setters are used here
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
