@@ -17,7 +17,7 @@ public class PermanentInstructor extends Instructor {
 
     public double getAllowance() { return allowance; }
     public void setAllowance(double allowance) { this.allowance = allowance; }
-
+//override functions
     @Override
     public String getEmploymentType() { return "PERMANENT"; }
 
