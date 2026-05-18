@@ -7,7 +7,7 @@ public class BankTransferPayment extends Payment {
     private String referenceNumber;
 
     public BankTransferPayment() { super(); }
-//inheritance is used
+//inheritance is used.
     public BankTransferPayment(String id, String registrationId, double amount, LocalDate paymentDate, String status, String bankName, String referenceNumber) {
         super(id, registrationId, amount, paymentDate, status);
         this.bankName = bankName;
