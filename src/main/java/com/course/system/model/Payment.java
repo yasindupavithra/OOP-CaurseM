@@ -19,7 +19,7 @@ public abstract class Payment implements Serializable {
         this.paymentDate = paymentDate;
         this.status = status;
     }
-
+//getter and setter methods
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
