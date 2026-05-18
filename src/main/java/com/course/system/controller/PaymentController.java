@@ -17,6 +17,17 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * PaymentController regulates all CRUD operations and validations
+ * related to Tuition Billing and Payment Registry inside the EduReg system.
+ * 
+ * Major features:
+ * - Direct mapping of Card vs Bank Wire transfer collections
+ * - Overridden dynamic transaction reference display
+ * - 16-digit card number format validations
+ * 
+ * @author Member 01 (You)
+ */
 @Controller
 @RequestMapping("/payments")
 public class PaymentController {
