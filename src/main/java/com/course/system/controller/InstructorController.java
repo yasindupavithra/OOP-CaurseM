@@ -14,6 +14,17 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * InstructorController coordinates all CRUD operations and validations
+ * related to Lecturer/Faculty Management inside the EduReg system.
+ * 
+ * Major features:
+ * - Direct mapping of Permanent vs Visiting Lecturers
+ * - Dynamic polymorphic salary calculations display
+ * - Email format validation
+ * 
+ * @author Member 01 (You)
+ */
 @Controller
 @RequestMapping("/instructors")
 public class InstructorController {
@@ -21,7 +32,9 @@ public class InstructorController {
     @Autowired
     private InstructorService instructorService;
 
-    // 1. Read (Search / View List UI)
+    /**
+     * Retrieves all lecturer files records and returns list view with search filter.
+     */
     @GetMapping
     public String listInstructors(@RequestParam(required = false) String search, Model model) throws IOException {
         List<Instructor> instructors = instructorService.getAllInstructors();
