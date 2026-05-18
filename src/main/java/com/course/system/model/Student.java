@@ -5,7 +5,7 @@ public class Student extends User {
     private String fullName;
     private double gpa;
     private int yearOfStudy;
-
+//attributes of the class
     public Student() {
         super();
         setUserType("STUDENT");
