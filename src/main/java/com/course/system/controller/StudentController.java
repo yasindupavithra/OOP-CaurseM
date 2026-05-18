@@ -13,6 +13,17 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+/**
+ * StudentController handles all CRUD operations and validations
+ * related to Student Profile Management inside the EduReg system.
+ * 
+ * Major features:
+ * - GPA Boundary Checks (0.0 - 4.0)
+ * - Year of Study limits (1 - 5)
+ * - Safe flat-file mapping
+ * 
+ * @author Member 01 (You)
+ */
 @Controller
 @RequestMapping("/students")
 public class StudentController {
@@ -20,7 +31,9 @@ public class StudentController {
     @Autowired
     private UserService userService;
 
-    // 1. Read (Search / View List UI)
+    /**
+     * Retrieves all student accounts from file database and filters them based on query string.
+     */
     @GetMapping
     public String listStudents(@RequestParam(required = false) String search, Model model) throws IOException {
         List<User> students = userService.getAllUsers().stream()
