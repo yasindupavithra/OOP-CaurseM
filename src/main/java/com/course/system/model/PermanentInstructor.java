@@ -11,7 +11,7 @@ public class PermanentInstructor extends Instructor {
         this.monthlySalary = monthlySalary;
         this.allowance = allowance;
     }
-
+// getter and setter methods
     public double getMonthlySalary() { return monthlySalary; }
     public void setMonthlySalary(double monthlySalary) { this.monthlySalary = monthlySalary; }
 
