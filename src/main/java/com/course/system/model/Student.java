@@ -1,5 +1,5 @@
 package com.course.system.model;
-
+//Inheritance 
 public class Student extends User {
     private String degreeProgram;
     private String fullName;
