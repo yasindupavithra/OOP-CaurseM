@@ -1,5 +1,11 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for User.java:
+// - Abstraction: 'User' is abstract and provides common user attributes and contract 'getRoleDescription()'.
+// - Inheritance: 'Student' and 'Admin' extend User.
+// - Encapsulation: id, username, password, email, userType are private with getters/setters to control access.
+// - Information Hiding: toString() is used for file serialization but reveals sensitive fields (password) — consider hashing and hiding sensitive data.
+
 import java.io.Serializable;
 
 public abstract class User implements Serializable {

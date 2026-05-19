@@ -1,5 +1,10 @@
 package com.course.system.controller;
 
+// OOP ANNOTATIONS for InstructorController.java:
+// - Layered Architecture: Controller delegates business logic to InstructorService (separation of concerns).
+// - Dependency Injection: @Autowired InstructorService demonstrates inversion of control and loose coupling.
+// - Uses polymorphic Instructor objects in views; controllers treat them generically.
+
 import com.course.system.model.Instructor;
 import com.course.system.model.PermanentInstructor;
 import com.course.system.model.VisitingInstructor;

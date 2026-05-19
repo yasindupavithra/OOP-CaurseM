@@ -1,5 +1,10 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for PermanentInstructor.java:
+// - Inheritance: extends 'Instructor'.
+// - Polymorphism: overrides 'calculateSalary()' to compute monthlySalary + allowance.
+// - Encapsulation: keeps 'monthlySalary' and 'allowance' private with getters/setters.
+
 public class PermanentInstructor extends Instructor {
     private double monthlySalary;
     private double allowance;

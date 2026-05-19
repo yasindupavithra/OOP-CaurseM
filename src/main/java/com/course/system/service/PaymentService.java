@@ -1,5 +1,10 @@
 package com.course.system.service;
 
+// OOP ANNOTATIONS for PaymentService.java:
+// - Abstraction: PaymentService encapsulates payment persistence and parsing logic.
+// - Polymorphism: when parsing lines, different Payment subclasses are instantiated and returned as Payment references.
+// - Encapsulation: callers work with Payment interface without knowing concrete types.
+
 import com.course.system.model.BankTransferPayment;
 import com.course.system.model.CardPayment;
 import com.course.system.model.Payment;

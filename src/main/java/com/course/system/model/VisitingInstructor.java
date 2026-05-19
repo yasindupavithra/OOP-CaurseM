@@ -1,5 +1,10 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for VisitingInstructor.java:
+// - Inheritance: extends 'Instructor'.
+// - Polymorphism: overrides 'calculateSalary()' to compute hourlyRate * hoursTaught.
+// - Encapsulation: keeps hourlyRate and hoursTaught private with getters/setters.
+
 public class VisitingInstructor extends Instructor {
     private double hourlyRate;
     private double hoursTaught;

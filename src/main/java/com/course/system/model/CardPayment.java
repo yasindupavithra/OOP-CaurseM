@@ -1,5 +1,10 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for CardPayment.java:
+// - Inheritance: extends 'Payment'.
+// - Polymorphism: provides card-specific implementation of 'getPaymentDetails()' and 'getPaymentMethod()'.
+// - Encapsulation: cardNumber and cardType are private; sensitive details should be protected (avoid storing full card numbers in production).
+
 import java.time.LocalDate;
 
 public class CardPayment extends Payment {

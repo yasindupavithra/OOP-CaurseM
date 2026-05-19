@@ -1,5 +1,11 @@
 package com.course.system.model;
-//Inheritance 
+
+// OOP ANNOTATIONS for Student.java:
+// - Inheritance: 'Student' extends the abstract class 'User'.
+// - Encapsulation: student-specific fields (degreeProgram, fullName, gpa, yearOfStudy) are private and accessed via getters/setters.
+// - Polymorphism: implements 'getRoleDescription()' which is defined in the User base class.
+// - Information hiding: sensitive data (password) is stored in User; avoid exposing it via toString in production.
+
 public class Student extends User {
     private String degreeProgram;
     private String fullName;

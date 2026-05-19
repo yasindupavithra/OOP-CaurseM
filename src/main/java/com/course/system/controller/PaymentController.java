@@ -1,5 +1,10 @@
 package com.course.system.controller;
 
+// OOP ANNOTATIONS for PaymentController.java:
+// - Uses polymorphism: Payment references may point to CardPayment or BankTransferPayment at runtime.
+// - Controller delegates persistence to PaymentService (abstraction); validation logic kept in controller but could be extracted.
+// - Demonstrates separation of concerns between web, service, and model layers.
+
 import com.course.system.model.BankTransferPayment;
 import com.course.system.model.CardPayment;
 import com.course.system.model.Payment;

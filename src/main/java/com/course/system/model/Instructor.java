@@ -1,5 +1,11 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for Instructor.java:
+// - Abstraction: 'Instructor' is an abstract base class declaring behavior common to all instructors.
+// - Inheritance: Concrete subclasses like 'PermanentInstructor' and 'VisitingInstructor' extend this class.
+// - Polymorphism: Subclasses override 'calculateSalary()' to provide different salary calculations.
+// - Encapsulation & Information Hiding: Fields are private with getters/setters; internal representation is hidden.
+
 import java.io.Serializable;
 
 public abstract class Instructor implements Serializable {

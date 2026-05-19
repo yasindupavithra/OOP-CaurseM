@@ -1,5 +1,10 @@
 package com.course.system.service;
 
+// OOP ANNOTATIONS for UserService.java:
+// - Abstraction and Encapsulation: UserService provides high-level user operations and hides file-level persistence.
+// - Polymorphism: returns User references which may be Student or Admin at runtime.
+// - Information Hiding: service controls how User objects are created and written to files.
+
 import com.course.system.model.Admin;
 import com.course.system.model.Student;
 import com.course.system.model.User;

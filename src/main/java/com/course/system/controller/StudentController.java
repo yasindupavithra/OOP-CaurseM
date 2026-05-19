@@ -1,5 +1,10 @@
 package com.course.system.controller;
 
+// OOP ANNOTATIONS for StudentController.java:
+// - Encapsulation: controller uses service APIs rather than direct file access.
+// - Polymorphism: UserService returns User objects; controllers filter Student instances.
+// - Separation of concerns: validation and UI mapping happen in controller; persistence in service layer.
+
 import com.course.system.model.Student;
 import com.course.system.model.User;
 import com.course.system.service.UserService;

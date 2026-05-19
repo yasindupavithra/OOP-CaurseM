@@ -1,5 +1,10 @@
 package com.course.system.service;
 
+// OOP ANNOTATIONS for InstructorService.java:
+// - Abstraction: Service layer abstracts file persistence away from controllers.
+// - Encapsulation: Service methods hide file I/O details from controllers.
+// - Dependency Injection demonstrates decoupling and inversion of control via @Autowired FileService.
+
 import com.course.system.model.Instructor;
 import com.course.system.model.PermanentInstructor;
 import com.course.system.model.VisitingInstructor;

@@ -1,7 +1,12 @@
 package com.course.system.model;
 
-import java.time.LocalDate;
+// OOP ANNOTATIONS for BankTransferPayment.java:
+// - Inheritance: extends 'Payment'.
+// - Polymorphism: provides bank-transfer-specific 'getPaymentDetails()' and 'getPaymentMethod()'.
+// - Encapsulation: bankName and referenceNumber are private and exposed via getters/setters.
 
+import java.time.LocalDate;
+//inheritance is used. BankTransferPayment is a specific type of Payment with additional attributes and behaviors related to bank transfers.
 public class BankTransferPayment extends Payment {
     private String bankName;
     private String referenceNumber;

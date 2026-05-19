@@ -1,5 +1,11 @@
 package com.course.system.model;
 
+// OOP ANNOTATIONS for Payment.java:
+// - Abstraction: 'Payment' is abstract and defines common attributes/methods for all payments.
+// - Inheritance: Concrete types 'CardPayment' and 'BankTransferPayment' extend Payment.
+// - Polymorphism: Methods like 'getPaymentMethod()' and 'getPaymentDetails()' are overridden to provide type-specific behavior.
+// - Encapsulation: Fields are private and accessed via getters/setters; internal payment representation is hidden.
+
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -21,7 +27,7 @@ public abstract class Payment implements Serializable {
     }
 //getter and setter methods
     public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
+    public void setId(String id) { this.id = id; }    //.
 
     public String getRegistrationId() { return registrationId; }
     public void setRegistrationId(String registrationId) { this.registrationId = registrationId; }
