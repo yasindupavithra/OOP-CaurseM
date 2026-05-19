@@ -24,7 +24,7 @@ public abstract class Instructor implements Serializable {
         this.department = department;
         this.specialization = specialization;
     }
-
+//getter and setter methods
     public String getId() { return id; }
     public void setId(String id) { this.id = id; }
 
